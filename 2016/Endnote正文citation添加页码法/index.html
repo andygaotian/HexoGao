@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next gemini" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Endnote,文献管理,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Endnotes正文引用页码问题Endenote是写论文的神器，其好处自不必多说。不过由于是老外开发的东西，用在中文写作上总会有些水土不服的小毛病。 比如作者-年规范下中英文文献正文引用的多作者连接字符问题，即中文的“（罗常培、傅懋勣 1954)”和英文的“（Gray and Atkinson 2003）”中的“、”和“and”无法在一篇文章中共存的问题。这个问题网上有解决办法，当然无非是写完后统">
+<meta name="keywords" content="Endnote,文献管理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Endnote正文citation添加页码法">
+<meta property="og:url" content="http://yoursite.com/2016/Endnote正文citation添加页码法/index.html">
+<meta property="og:site_name" content="天俊的博客">
+<meta property="og:description" content="Endnotes正文引用页码问题Endenote是写论文的神器，其好处自不必多说。不过由于是老外开发的东西，用在中文写作上总会有些水土不服的小毛病。 比如作者-年规范下中英文文献正文引用的多作者连接字符问题，即中文的“（罗常培、傅懋勣 1954)”和英文的“（Gray and Atkinson 2003）”中的“、”和“and”无法在一篇文章中共存的问题。这个问题网上有解决办法，当然无非是写完后统">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/6d72855fgy1fyngauvkvij208x017744.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/6d72855fgy1fynfnrr8kyj20go0gomyj.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/6d72855fgy1fynfnrqxc4j206h0193yb.jpg">
+<meta property="og:updated_time" content="2018-12-30T03:52:13.355Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Endnote正文citation添加页码法">
+<meta name="twitter:description" content="Endnotes正文引用页码问题Endenote是写论文的神器，其好处自不必多说。不过由于是老外开发的东西，用在中文写作上总会有些水土不服的小毛病。 比如作者-年规范下中英文文献正文引用的多作者连接字符问题，即中文的“（罗常培、傅懋勣 1954)”和英文的“（Gray and Atkinson 2003）”中的“、”和“and”无法在一篇文章中共存的问题。这个问题网上有解决办法，当然无非是写完后统">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/6d72855fgy1fyngauvkvij208x017744.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/Endnote正文citation添加页码法/">
+
+
+
+
+
+  <title>Endnote正文citation添加页码法 | 天俊的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">天俊的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/Endnote正文citation添加页码法/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tianjun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="天俊的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Endnote正文citation添加页码法</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-09T22:56:52+08:00">
+                2016-06-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Endnotes正文引用页码问题"><a href="#Endnotes正文引用页码问题" class="headerlink" title="Endnotes正文引用页码问题"></a>Endnotes正文引用页码问题</h2><p>Endenote是写论文的神器，其好处自不必多说。不过由于是老外开发的东西，用在中文写作上总会有些水土不服的小毛病。 比如作者-年规范下中英文文献正文引用的多作者连接字符问题，即中文的“<code>（罗常培、傅懋勣 1954)</code>”和英文的“<code>（Gray and Atkinson 2003）</code>”中的“<code>、</code>”和“<code>and</code>”无法在一篇文章中共存的问题。这个问题网上有解决办法，当然无非是写完后统一替换其中一种连接符。替换法涉及一些word高级查找替换功能，比如查找中文字符的方法等。<a id="more"></a></p>
+<p>上面这个问题不是本文的重点，不再啰嗦。这里关注的是作者-年格式下，正文中引用文献的页码标记问题。</p>
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>当引用到专著式文献中某一具体部分时，严格来说是需要在citation的括号内标注详细页码的（期刊无需标注页码，因为在文后参考文献中已有页码信息），在作者年格式下形式是这样的：“<code>Harrison(2003:214)</code>”。但是，从网上找到的各种符合中国学术期刊引文标准的style全部只能显示没有页码显示功能，即只能显示<code>Harrison(2003)</code>或<code>(Harrison 2003)</code>。 </p>
+<p>你可能觉得，直接手动将页码加到括号内不就行了么。遗憾的是这方法不可行，因为Endnote引文和参考文献在Word中都是以域的形式出现的，而这些域是由Endnote的Word插件在后台控制的，当插入新的文献或者更改输出Style时，全文的引文和参考文献都会刷新一次，使其还原到标准格式。事实上，手动修改的字符根本存活不到3秒，修改完后Endnotes会即时刷新一次，刚修改的内容直接被还原。</p>
+<p><code>图1：endnote引文的域（点击后会灰底高亮显示，Alt+F9可查看域代码）</code></p>
+<p><img src="http://ww1.sinaimg.cn/large/6d72855fgy1fyngauvkvij208x017744.jpg" alt=""></p>
+<p>当然，也可以在插入文献后直接将它转换成纯文本（convert to plain text），但这样的话，endnote的文内管理功能就直接被废掉了，实在是用了和没用差别不大。</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>最开始，试过几种不同来源的<code>Chinese Standard GBT7714 Author-year</code>样式文件，发现都没有页码显示功能。思来想去，总觉得这宇宙第一的文献管理工具不至于连这么常规的功能都不支持。于是去分析了下Style样式文件，从一个外文样式里面找到了例子，照着修改了GBT的文件，测试成功。不得不说，Endnote的样式编辑功能不是很稳定，自己写的字符（检查过所有字符内码）就是不生效，从外文处复制来的却可以，百思不解。</p>
+<h3 id="具体修改方法："><a href="#具体修改方法：" class="headerlink" title="具体修改方法："></a>具体修改方法：</h3><ol>
+<li><p><code>Edit</code>——<code>Out Style</code>——<code>edit Chinese Standard GBT7714 Author-year</code>打开编辑窗口（只有在应用的样式才会出现在菜单中，当然也可以去style编辑器中找到并选择编辑）</p>
+</li>
+<li><p>修改Cititions下的Templates中的<code>Citation</code>和<code>Citation-Author（Year）</code>两项，分别为： </p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">（Author |Year|: Cited Pages|）</span><br><span class="line"> Author（|Year|: Cited Pages|）</span><br></pre></td></tr></table></figure>
+<p>由于上面提到的style编辑器傲娇的问题，这里附上已修改好的ens文件，扔到Endnote安装目录下的styles文件夹下即可。</p>
+<p>​       百度云链接: <a href="https://pan.baidu.com/s/1pLox4mf" target="_blank" rel="noopener">https://pan.baidu.com/s/1pLox4mf</a> 密码: aars </p>
+<h3 id="行文中使用方法"><a href="#行文中使用方法" class="headerlink" title="行文中使用方法"></a>行文中使用方法</h3><p>从Style源文件中可以看到，修改过程其实只是增加了一个<code>Cited pages</code>字段（和前面的冒号），并用||括起来，Endnote根据是否有<code>cited pages</code>来判断是否显示页码和冒号。<br>问题来了，这个<code>Cited Pages</code>内容从哪里输入呢？<br>两个方法：</p>
+<h4 id="方法1"><a href="#方法1" class="headerlink" title="方法1"></a>方法1</h4><ol>
+<li>在要增加页码的文献上右键——<code>Edit Citation(s)</code>——<code>more</code>，弹出<code>Edit &amp; Manage Citation(s)</code>窗口。</li>
+<li>选中需要修改的文献，在Word的Endnote X7工具面板上点击<code>Edit &amp; Manage Citation(s)</code>，弹出窗口。<h4 id="方法2"><a href="#方法2" class="headerlink" title="方法2"></a>方法2</h4>在弹出的窗口的下部pages字段中输入要引用的页码即可。注意，如果有多个文献引用，可以在窗口上部分别选中需指定页码的文献后输入（修改）页码。<br><img src="http://ww1.sinaimg.cn/large/6d72855fgy1fynfnrr8kyj20go0gomyj.jpg" alt=""></li>
+</ol>
+<h2 id="最终效果"><a href="#最终效果" class="headerlink" title="最终效果"></a>最终效果</h2><p>如下所示，页码已被置于域中，修改参考文献后可联动变化。<br><img src="http://ww1.sinaimg.cn/large/6d72855fgy1fynfnrqxc4j206h0193yb.jpg" alt=""></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/img/wechat.jpg" alt="Tianjun wechat" style="width: 200px; max-width: 100%;">
+    <div>欢迎订阅我的微信公众号</div>
+</div>
+
+      </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Endnote/" rel="tag"># Endnote</a>
+          
+            <a href="/tags/文献管理/" rel="tag"># 文献管理</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/Google输入法国际音标辅助输入扩展/" rel="next" title="Google输入法国际音标辅助输入扩展">
+                <i class="fa fa-chevron-left"></i> Google输入法国际音标辅助输入扩展
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/Excel-python插件简评/" rel="prev" title="Excel python插件简评">
+                Excel python插件简评 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/avatar/avatar.jpg" alt="Tianjun">
+            
+              <p class="site-author-name" itemprop="name">Tianjun</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/andygaotian" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Endnotes正文引用页码问题"><span class="nav-number">1.</span> <span class="nav-text">Endnotes正文引用页码问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题描述"><span class="nav-number">2.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案"><span class="nav-number">3.</span> <span class="nav-text">解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#具体修改方法："><span class="nav-number">3.1.</span> <span class="nav-text">具体修改方法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#行文中使用方法"><span class="nav-number">3.2.</span> <span class="nav-text">行文中使用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法1"><span class="nav-number">3.2.1.</span> <span class="nav-text">方法1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法2"><span class="nav-number">3.2.2.</span> <span class="nav-text">方法2</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最终效果"><span class="nav-number">4.</span> <span class="nav-text">最终效果</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tianjun</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

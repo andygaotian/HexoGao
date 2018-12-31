@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next gemini" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="VBA,Excel,Python,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Excel python插件简评VBA是MS Office的杀手锏，它在办公自动化、数据处理等方面的强大功能目前几乎无法替代，这也是我们没办法抛弃MS office转用更轻巧的WPS等其他办公软件的原因。但是VBA诞生已有二十多年，我从office 2003开始学习使用VBA，到现在的office 2016，这十年来基本没感觉出它有什么变化。时代在发展，现在的VBA实在是显得有些老迈了，在用过Py">
+<meta name="keywords" content="VBA,Excel,Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Excel python插件简评">
+<meta property="og:url" content="http://yoursite.com/2018/Excel-python插件简评/index.html">
+<meta property="og:site_name" content="天俊的博客">
+<meta property="og:description" content="Excel python插件简评VBA是MS Office的杀手锏，它在办公自动化、数据处理等方面的强大功能目前几乎无法替代，这也是我们没办法抛弃MS office转用更轻巧的WPS等其他办公软件的原因。但是VBA诞生已有二十多年，我从office 2003开始学习使用VBA，到现在的office 2016，这十年来基本没感觉出它有什么变化。时代在发展，现在的VBA实在是显得有些老迈了，在用过Py">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/6d72855fgy1fn3qrm15poj20mi05gjry.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/6d72855fgy1fn4f1orkmhj20pk055dgc.jpg">
+<meta property="og:updated_time" content="2018-12-30T03:52:05.484Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Excel python插件简评">
+<meta name="twitter:description" content="Excel python插件简评VBA是MS Office的杀手锏，它在办公自动化、数据处理等方面的强大功能目前几乎无法替代，这也是我们没办法抛弃MS office转用更轻巧的WPS等其他办公软件的原因。但是VBA诞生已有二十多年，我从office 2003开始学习使用VBA，到现在的office 2016，这十年来基本没感觉出它有什么变化。时代在发展，现在的VBA实在是显得有些老迈了，在用过Py">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/6d72855fgy1fn3qrm15poj20mi05gjry.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/Excel-python插件简评/">
+
+
+
+
+
+  <title>Excel python插件简评 | 天俊的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">天俊的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/Excel-python插件简评/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tianjun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="天俊的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Excel python插件简评</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-28T11:10:31+08:00">
+                2018-12-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Excel-python插件简评"><a href="#Excel-python插件简评" class="headerlink" title="Excel python插件简评"></a>Excel python插件简评</h2><p>VBA是MS Office的杀手锏，它在办公自动化、数据处理等方面的强大功能目前几乎无法替代，这也是我们没办法抛弃MS office转用更轻巧的WPS等其他办公软件的原因。但是VBA诞生已有二十多年，我从office 2003开始学习使用VBA，到现在的office 2016，这十年来基本没感觉出它有什么变化。时代在发展，现在的VBA实在是显得有些老迈了，在用过Python后再写VBA总会觉得是种煎熬。<a id="more"></a></p>
+<p>最近有新闻说微软考虑将Python引入Excel，让它成为官方支持的脚本语言。由于新闻来源只是微软的一个反馈调查而已，所以我对这个事情并不太乐观，即使微软真要支持Python，估计也不是短期内可以实现的。不过话说回来，不管是不是真的靠谱，这个前景还是非常值得期待的。</p>
+<p>虽然微软官方还没有支持Python，但实际上民间早就有许多支持在Excel里面用Python进行数据操作的插件了。去年做论文的时候试用过两个最有名的：xlwings和DataNitro，当时体验并不太好，但是现在已时隔一年多，或许它们都有所改进，所以有必要再试试。</p>
+<h3 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h3><h4 id="1-1-DataNitro"><a href="#1-1-DataNitro" class="headerlink" title="1.1 DataNitro"></a>1.1 DataNitro</h4><p><a href="https://datanitro.com/" target="_blank" rel="noopener">DataNitro</a>是MIT的学生于2012年启动的一个项目，目前是收费软件，价格相当贵——最便宜的Essential版都要99美元，支持30天试用。</p>
+<p>在功能上，DataNitro集成有一个交互式命令行工具（Python Shell），可以直接在Shell中编写Python代码与Excel进行交互。此外， DataNitro还支持加载、运行外部Python脚本文件，并能在Excel中调用外部脚本中的Python函数，实现扩充Excel公式的效果。                                                                                </p>
+<p>安装DataNitro后会自动在Excel中新建一个选项卡，可以直接通过选项卡打开Python Shell，进行Python脚本的导入、运行、停止等操作。</p>
+<p><img src="http://ww1.sinaimg.cn/large/6d72855fgy1fn3qrm15poj20mi05gjry.jpg" alt=""></p>
+<h4 id="1-2-xlwings"><a href="#1-2-xlwings" class="headerlink" title="1.2 xlwings"></a>1.2 xlwings</h4><p><a href="https://www.xlwings.org/" target="_blank" rel="noopener">xlwings</a>是一个开源的Excel Python插件。xlwings的功能和DataNitro大同小异。根据官方介绍，xlwings支持Python脚本与Excel的交互；其语法接近VBA；可以“替代（Excel的）VBA宏”；支持用户自定义函数（即Excel中的自定义公式）等。</p>
+<p>xlwings可以直接使用pip来安装，非常方便。通过pip安装xlwings后即可通过Python代码直接与Excel进行交互，但是pip安装并不会在Excel中添加扩展和选项卡页扩展（当然这不是必须的，只是方便设置环境变量等而已），Excel 扩展可单独另行安装，扩展安装后界面如下。</p>
+<p><img src="http://ww1.sinaimg.cn/large/6d72855fgy1fn4f1orkmhj20pk055dgc.jpg" alt=""></p>
+<h3 id="2-主要功能对比"><a href="#2-主要功能对比" class="headerlink" title="2. 主要功能对比"></a>2. 主要功能对比</h3><p>DataNitro和xlwings在功能上相差不大。二者都能打开Excel文件；都能对已打开的工作簿进行读写操作；都能修改单元格及单元格区域（Cell和Range）的颜色；都能添加超链接；都支持对指定单元格设置公式等。此外，二者都支持pandas、numpy等第三方Python包，可以极大的增强Excel的数据处理能力。</p>
+<p>两个软件也有一些功能差异（见下表）。这些功能差异中比较重要的大概有两点：</p>
+<ol>
+<li><strong>Python版本支持：</strong> 由于Python 2的字符编码让人非常头疼（Unicode和str转换永远搞不清楚怎么回事），而我要处理的又全是文本数据，所以现在已经转用对Unicode天然支持得极好的Python 3了，因此这两个插件能否支持Python 3对我而言非常重要。DataNitro官方声称支持Python 3，但是虽然我系统中安装的是Python 3，默认安装DataNitro后还是只支持Python 2.7，这一点很不友好。xlwings在这方面做得就好得多了，pip安装后即完美支持Python 3。</li>
+<li><strong>Range格式支持：</strong> 根据各自官方文档的描述，DataNitro和xlwings对与Excel格式的支持有些区别：前者支持对单元格（及Range）的颜色、字体、字号、加粗、斜体、下划线、上下标、对齐方式等常用格式属性进行修改。xlwings的官方文档中Range对象则只有一个color属性，用来修改Range的背景色。但是，因为<a href="http://docs.xlwings.org/en/stable/missing_features.html" target="_blank" rel="noopener">xlwings其实是pywin32的一个封装</a>，所以我们可以通过Range的api属性来访问所有VBA自带的属性（如 <code>sht.range(&#39;A1&#39;).api.Font.ColorIndex = 3</code> 可以把A1单元格的字体颜色改为红色），理论上也就可以修改所有Excel中的格式信息了（官方并不推荐这种做法，因为api调用的VBA语法丑陋且不符合Python风格）。</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>DataNitro</th>
+<th>xlwings</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python版本支持</td>
+<td>默认Python2.7</td>
+<td>Python 2.7/3.3+</td>
+</tr>
+<tr>
+<td>自带编辑器</td>
+<td>√</td>
+<td>——</td>
+</tr>
+<tr>
+<td>自带Shell</td>
+<td>√ 使用系统Shell操作当前Excel似乎并不方便</td>
+<td>无自带Shell，但使用系统Shell操作Excel非常方便</td>
+</tr>
+<tr>
+<td>修改字体、字号等格式信息</td>
+<td>√</td>
+<td>通过api支持</td>
+</tr>
+<tr>
+<td>形状</td>
+<td>——</td>
+<td>√</td>
+</tr>
+<tr>
+<td>图表</td>
+<td>——</td>
+<td>√</td>
+</tr>
+</tbody>
+</table>
+<p>两个插件在脚本运行方式上也有比较明显的区别。DataNitro有<code>Shell直接运行代码</code>和<code>加载外置py文件</code>两种模式；xlwings则可以脱离Excel直接运行外置py代码，也就是说你可以使用任何第三方编辑器或IDE编写、运行和调试相关代码，也可以通过直接在文件管理器中直接运行写好的py文件来控制Excel。DataNitro和xlwing运行代码的方式各有优劣：<strong>前者</strong>的Shell模式可以非常方便的编写一些小程序，并迅速在Excel中执行，但是缺点是不方便调试（它的加载外置py文件模式也有调试不便的问题）；<strong>后者</strong>没有内置Shell和编辑器，必须使用第三方编辑器编写代码，但是优点是调试非常方便。于我而言，后者更加合适。当然，如果微软真能把Python内置到Excel里面，可以把Python代码像VBA代码一样存储在xls、xlsm等文件内部，那就更方便了！</p>
+<h3 id="3-性能测试"><a href="#3-性能测试" class="headerlink" title="3. 性能测试"></a>3. 性能测试</h3><p>众所周知，VBA的运算速度相当慢，并且一旦处理的数据量稍大（运算时间超过几秒钟）就会使VBE（代码编辑器）连同主程序（Excel、Word等）一起失去响应而假死，体验非常差。</p>
+<p>Python虽不以速度见长，但是和VBA相比也几乎是飞机和马车的差别了。当然，具体到这两个插件上，它们的运行效率可以分两个方面来看：一是Python内部的运算速度，二者当然都比VBA快；二是与Excel的交互速度（即读取、修改Excel表格内容的速度），由于二者都是通过Excel提供的API与之交互的，因此这个速度应该会慢于VBA直接处理表格内容的速度。事实上，根据我的测试，无论是DataNitro还是xlwings，它们读取和写入表格内容的速度也确实都比VBA要慢，当处理的数据量较大的时候，速度差别也会更加明显。当然，在许多时候，我们可以通过减少读写Excel内容的方法来规避交互速度慢的缺点。比如，可以一次性将要处理的数据区域的内容读取到内存中（两个插件都可以把一个连续的Range中的值读取并存储为一个二维列表，也可以把一个二维列表一次性写入表格中的指定区域），然后通过Python对数据进行处理并将处理结果打包为一个二维列表，最后一次性写入Excel中，这样程序只需要和Excel进行两次交互就能完成任务，可以极大程度的减少程序所耗费的时间。经过测试，一个使用VBA需要一分多钟才能完成的任务，使用xlwings只需3-4秒即可完成。</p>
+<p>DataNitro和xlwings在速度上也有些差异，这主要体现在Python的加载速度上。DataNitro在这方面更有优势，无论是使用内置Shell还是加载外部脚本，都可以在1秒内完成初始化过程，而xlwings则至少需要两三秒钟。当然，初始化完成后，后面的运行速度应该不会有什么区别，DataNitro的优势也只体现在这两三秒上而已。</p>
+<h3 id="4-小结"><a href="#4-小结" class="headerlink" title="4. 小结"></a>4. 小结</h3><p>和去年相比，这两个插件似乎都有明显的进步，一定程度上来说它们都可以替代VBA的绝大部分工作了。两个软件也各有优劣势，DataNitro在速度上小有优势，语法似乎也更为简洁，内置支持的Excel特性也更丰富，但是调试不便，对Python 3 的支持也不够人性化，更致命的是99刀起步的售价实在是太贵。xlwings虽在速度上略逊一筹，但原生支持Python 3，调试更是非常方便，最关键的是开源免费！所以如果要二选一，我选xlwings！</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/img/wechat.jpg" alt="Tianjun wechat" style="width: 200px; max-width: 100%;">
+    <div>欢迎订阅我的微信公众号</div>
+</div>
+
+      </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/VBA/" rel="tag"># VBA</a>
+          
+            <a href="/tags/Excel/" rel="tag"># Excel</a>
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/Endnote正文citation添加页码法/" rel="next" title="Endnote正文citation添加页码法">
+                <i class="fa fa-chevron-left"></i> Endnote正文citation添加页码法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/avatar/avatar.jpg" alt="Tianjun">
+            
+              <p class="site-author-name" itemprop="name">Tianjun</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/andygaotian" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Excel-python插件简评"><span class="nav-number">1.</span> <span class="nav-text">Excel python插件简评</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-简介"><span class="nav-number">1.1.</span> <span class="nav-text">1. 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-DataNitro"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1 DataNitro</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-xlwings"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2 xlwings</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-主要功能对比"><span class="nav-number">1.2.</span> <span class="nav-text">2. 主要功能对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-性能测试"><span class="nav-number">1.3.</span> <span class="nav-text">3. 性能测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-小结"><span class="nav-number">1.4.</span> <span class="nav-text">4. 小结</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tianjun</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

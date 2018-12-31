@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next gemini" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="输入法,国际音标,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="算起来，搜狗拼音输入法已经用了七八年了。不得不说，搜狗确实是个非常成功的输入法。当年紫光拼音一改智能ABC龟速、死板的风格，开了风气之先，而后天天崩溃被人抛弃之后，搜狗算是完美的接了它的班。不过，在国内软件行业乌烟瘴气的环境下，搜狗一个单纯输入法也被搞成了个大杂烩。如果说为了功能牺牲点性能是值得的话，那为了抢占地盘搞出的SGImeGuard.exe进程就实在是让人觉得有点不爽了，3Q大战把用户电脑">
+<meta name="keywords" content="输入法,国际音标">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Google输入法国际音标辅助输入扩展">
+<meta property="og:url" content="http://yoursite.com/2015/Google输入法国际音标辅助输入扩展/index.html">
+<meta property="og:site_name" content="天俊的博客">
+<meta property="og:description" content="算起来，搜狗拼音输入法已经用了七八年了。不得不说，搜狗确实是个非常成功的输入法。当年紫光拼音一改智能ABC龟速、死板的风格，开了风气之先，而后天天崩溃被人抛弃之后，搜狗算是完美的接了它的班。不过，在国内软件行业乌烟瘴气的环境下，搜狗一个单纯输入法也被搞成了个大杂烩。如果说为了功能牺牲点性能是值得的话，那为了抢占地盘搞出的SGImeGuard.exe进程就实在是让人觉得有点不爽了，3Q大战把用户电脑">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/6d72855fgy1fyml55ipumj20by0d6dgq.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/6d72855fgy1fyml55hzw9j20dw04idfw.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/6d72855fgy1fyml55ga20j206d02imx0.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/6d72855fgy1fyml55gwoej20ce04d0sp.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/6d72855fgy1fyml55j0puj20ed07oglu.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/6d72855fgy1fyml55j9xkj20io083q35.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/6d72855fgy1fyml55jzoaj20gi03egli.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/6d72855fgy1fyml55iij8j20mr0ghgmm.jpg">
+<meta property="og:updated_time" content="2018-12-30T03:51:22.870Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Google输入法国际音标辅助输入扩展">
+<meta name="twitter:description" content="算起来，搜狗拼音输入法已经用了七八年了。不得不说，搜狗确实是个非常成功的输入法。当年紫光拼音一改智能ABC龟速、死板的风格，开了风气之先，而后天天崩溃被人抛弃之后，搜狗算是完美的接了它的班。不过，在国内软件行业乌烟瘴气的环境下，搜狗一个单纯输入法也被搞成了个大杂烩。如果说为了功能牺牲点性能是值得的话，那为了抢占地盘搞出的SGImeGuard.exe进程就实在是让人觉得有点不爽了，3Q大战把用户电脑">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/6d72855fgy1fyml55ipumj20by0d6dgq.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2015/Google输入法国际音标辅助输入扩展/">
+
+
+
+
+
+  <title>Google输入法国际音标辅助输入扩展 | 天俊的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">天俊的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/Google输入法国际音标辅助输入扩展/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tianjun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="天俊的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Google输入法国际音标辅助输入扩展</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-03-24T17:15:47+08:00">
+                2015-03-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>算起来，搜狗拼音输入法已经用了七八年了。不得不说，搜狗确实是个非常成功的输入法。当年紫光拼音一改智能ABC龟速、死板的风格，开了风气之先，而后天天崩溃被人抛弃之后，搜狗算是完美的接了它的班。不过，在国内软件行业乌烟瘴气的环境下，搜狗一个单纯输入法也被搞成了个大杂烩。如果说为了功能牺牲点性能是值得的话，那为了抢占地盘搞出的SGImeGuard.exe进程就实在是让人觉得有点不爽了，3Q大战把用户电脑当战场埋下的恶之因在中国软件市场简直是遍地开花结果，连一小小的输入法都要在人家电脑上Guard那本不是它的一亩三分地。<a id="more"></a></p>
+<p>说了这么多，其实就是喜新厌旧了，嘿嘿。前两天偶然看到一篇介绍Google输入法的文章，把它的简洁纯粹好好的吹嘘了一番，于是突然想体验下试试新的风格。</p>
+<p>Google的东西简洁、高效，和搜狗相比，各类最常用的输入功能都已经具备，动态词频调整、用户自定义词库自不在话下，拆字输入、笔画输入、英文输入也是一个不缺。Google唯一比较弱势的地方在搜狗所谓的“云输入”功能，搜狗这七八年来突飞猛进，早已占据了中国输入法软件市场的半壁江山，它所拥有的庞大用户群每天输入的词汇、句子形成了一个巨大的词（句）库，这对提高输入速度和准确度提供了极好的支撑，根据所谓“大数据”理论，这个资源足以使它在中文输入法领域立于不败之地。Google就没那么happy了，虽然是世界网络巨头，无奈天朝墙高水深电阻大，即使用它的天朝人也不少，可是能每天实时上传、同步自己输入数据的人实在难成气候，现在看来Google输入法也只能暂时安心待在“地上”遥望“云端”了。</p>
+<p>话说回来，Google虽然输入的精准性可能比不上搜狗，但贵在快速、流畅、精干——少了许多花里胡哨的皮肤，没有各类只占资源没任何实际价值的弹窗，却多了自定义扩展这一具有“无限可能”的“高端”功能。和搜狗想把用户的各种需求都打包进输入法既当爹又当妈还想当领导的思路不同，Google发扬其一贯的开放精神，为其输入法加入了公开的API接口，让用户有了根据自己需要定制功能的可能。Google输入法自带的扩展中已经通过几个简单的程序把搜狗输入法中v模式下的算术、函数等功能实现了，剩下那几个数字转换、日期转换稍稍改改代码也是手到擒来，另外，它自带的“查询unicode编码”功能对文本处理编程来说也是简单实用。</p>
+<p>于是突然就想起偶曾经的老本行——各类繁杂字符、国际音标的输入问题。国际音标这东西在我们这领域使用频率说高不高、说低不低。在出现频率高的情景下，潘悟云等先生开发的云龙、灵风输入法和江荻等先生开发的蓝蝶输入法都已经能很完美的解决国际音标的输入问题，他们对语言学界的贡献自是有目共睹。不过，在平常行文时，常会遇到中文掺杂少量音标的情况，此时常需要用<code>ctrl+shift</code>来回切换输入法，如果电脑上装了3个或更多输入法（比如搜狗拼音+手写逍遥笔+国际音标），输入一次音标并切回状态的按键顺序是：<code>ctrl+shift→ctrl+shift→音标→Ctrl+shift</code>，左手共需离开原位两次并按两次组合键（当然也可以给输入法绑定快捷键，如搜狗<code>ctrl+～</code>，音标用<code>ctrl+1</code>，操作可减为两次，但这东西老失灵，怀疑正是搜狗的问题），如果这样混输多随机出现几次，偶这种强迫症患者实在是会有些不爽。</p>
+<p>再一次发现自己有磨刀型强迫症——可以用为吃泡面而盖房子的故事来诠释：某天突然想吃泡面了→那得有个锅煮面最好→有锅了最好有个厨房做饭→要厨房不如直接盖栋房子→OK开工盖房子，房子盖好了突然发现，好像我只想吃个泡面而已啊……</p>
+<h2 id="以下正题："><a href="#以下正题：" class="headerlink" title="以下正题："></a>以下正题：</h2><h3 id="1-目标："><a href="#1-目标：" class="headerlink" title="1. 目标："></a>1. 目标：</h3><p>在中文混杂少量音标的输入环境下，在双手尽可能不离开键盘、尽可能减少切换的情况下，完成个别国际音标的输入。本扩展无法作为大规模国际音标输入之用途。</p>
+<h3 id="2-实现方法："><a href="#2-实现方法：" class="headerlink" title="2. 实现方法："></a>2. 实现方法：</h3><p>使用Google拼音输入法的扩展API，结合灵风输入法的编码方案（可根据自己习惯定制编码），编写一个简单的国际音标输入的“命令扩展”。</p>
+<h3 id="3-安装及使用方法："><a href="#3-安装及使用方法：" class="headerlink" title="3. 安装及使用方法："></a>3. 安装及使用方法：</h3><p>安装google拼音输入法（<a href="https://www.google.com/intl/zh-CN/ime/pinyin/index.html" target="_blank" rel="noopener">下载地址</a>），下载（链接：<a href="http:/pan.baidu.com/s/1dDvol8l" target="_blank" rel="noopener">http://pan.baidu.com/s/1dDvol8l</a> 密码:1wyt）<code>ipa.lua</code>文件，双击即会弹出google输入法扩展设置窗口如下，勾选<code>【启用输入法扩展模式】</code>及下面的<code>ipa.lua</code>即可。使用方法见下文<code>“扩展说明”</code>部分。</p>
+<p><img src="http://ww1.sinaimg.cn/large/6d72855fgy1fyml55ipumj20by0d6dgq.jpg" alt="google拼音输入法设置"></p>
+<h3 id="4-扩展说明："><a href="#4-扩展说明：" class="headerlink" title="4. 扩展说明："></a>4. 扩展说明：</h3><p>Google拼音的扩展分为命令扩展、整合扩展和转换器扩展三种，这里使用的是“命令扩展”。所谓<code>“命令扩展”</code>是“将脚本程序中的某个入口函数关联到一个两字母长的自定义命令。当用户先键入i然后键入该命令时，输入法即激活该扩展函数，然后在候选项列表中显示扩展函数返回的候选项结果”。以Google自带的计算功能来说（搜狗也有此功能，使用方法是输入<code>v</code>+算式），输入<code>i</code>+扩展名标记<code>js</code>+算式，输入法即可自动计算算式结果，如下图：</p>
+<p><img src="http://ww1.sinaimg.cn/large/6d72855fgy1fyml55hzw9j20dw04idfw.jpg" alt=""></p>
+<p>undefined同样，这里的国际音标输入扩展的使用方法是，输入i+我的扩展标记pa+国际音标编码（扩展模式打开标记i加扩展名称pa正好组成ipa，<em>International</em> <em>Phonetic</em> <em>Alphabet**，</em>方便记忆），即可输入：</p>
+<p><img src="http://ww1.sinaimg.cn/large/6d72855fgy1fyml55ga20j206d02imx0.jpg" alt=""></p>
+<p>本扩展支持单码和多码，候选字有多个时，可用数字键上屏（首字当然可直接空格），如候选字多，可继续输入多码筛选，如：</p>
+<p><img src="http://ww1.sinaimg.cn/large/6d72855fgy1fyml55gwoej20ce04d0sp.jpg" alt=""></p>
+<h3 id="5-编码说明："><a href="#5-编码说明：" class="headerlink" title="5. 编码说明："></a>5. 编码说明：</h3><p>编码暂直接采用潘先生等设计的灵风输入法的编码方案，具体编码规则见<a href="http://www.eastling.org/resource.htm" target="_blank" rel="noopener">东方语言学网站软件下载区</a>灵风输入法<a href="http://www.eastling.org/resource/ylMultiInputReadme.zip" target="_blank" rel="noopener">使用说明</a>。扩展中的编码并不完整，如有不足可自己设计添加，另外因扩展中数字键需用来选字上屏，数字无法直接用于编码，因此原编码方案中的数字做了如下处理：</p>
+<h4 id="1-圈发符号的数字1-4换左手上排qwer代替，5-8用右手yuio代替，如下："><a href="#1-圈发符号的数字1-4换左手上排qwer代替，5-8用右手yuio代替，如下：" class="headerlink" title="1. 圈发符号的数字1-4换左手上排qwer代替，5-8用右手yuio代替，如下："></a>1. 圈发符号的数字1-4换左手上排qwer代替，5-8用右手yuio代替，如下：</h4><p><img src="http://ww1.sinaimg.cn/large/6d72855fgy1fyml55j0puj20ed07oglu.jpg" alt=""></p>
+<h4 id="2-上标时数字调号，用字母键盘最上排字母代替数字1-0，即："><a href="#2-上标时数字调号，用字母键盘最上排字母代替数字1-0，即：" class="headerlink" title="2. 上标时数字调号，用字母键盘最上排字母代替数字1-0，即："></a>2. 上标时数字调号，用字母键盘最上排字母代替数字1-0，即：</h4><table>
+<thead>
+<tr>
+<th>Q</th>
+<th>W</th>
+<th>E</th>
+<th>R</th>
+<th>T</th>
+<th>Y</th>
+<th>U</th>
+<th>I</th>
+<th>O</th>
+<th>P</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>   <img src="http://ww1.sinaimg.cn/large/6d72855fgy1fyml55j9xkj20io083q35.jpg" alt=""></p>
+<h4 id="3-θ原编码为数字0，改为oo-，此类的还有∅等。"><a href="#3-θ原编码为数字0，改为oo-，此类的还有∅等。" class="headerlink" title="3. θ原编码为数字0，改为oo-，此类的还有∅等。"></a>3. θ原编码为数字0，改为oo-，此类的还有∅等。</h4><h3 id="6-其他相关修改："><a href="#6-其他相关修改：" class="headerlink" title="6. 其他相关修改："></a>6. 其他相关修改：</h3><p>   逗号键（<code>,&lt;</code> ）和句号键（<code>.&gt;</code>）键一般作为翻页用，编码中<code>.</code> 号失效，故一律转换为 <code>d</code>，虽和表示字符倒转的<code>d</code> （如<code>ad， ɐ</code>）相冲突，增加了重码，但起码功能能继续保持，具体涉及音标：<br>   <img src="http://ww1.sinaimg.cn/large/6d72855fgy1fyml55jzoaj20gi03egli.jpg" alt=""><br>同样可能由于句点键与翻页键相冲突，候选字超过一页时，逗号、句号键翻页和<code>+-</code>号翻页都失效了，目前只能通过pageup、pagedown键和鼠标翻页。</p>
+<h3 id="7-扩展编辑方法说明："><a href="#7-扩展编辑方法说明：" class="headerlink" title="7. 扩展编辑方法说明："></a>7. 扩展编辑方法说明：</h3><p>扩展文件<code>ipa.lua</code>是一个简单的脚本文件，可以使用任何文本编辑器（如记事本）打开和编辑，其内容分编码和程序两部分，结构如下：<br>程序部分非常简单，也无需进行修改，如要修改扩展标记（<code>pa</code>），可修改最后一句第一个引号内的pa，只支持两个英文字母，不能多不能少。码表部分每行的格式是：  编码+空格+编码所辖字符（各字符间用英文逗号隔开）。</p>
+<p>   <img src="http://ww1.sinaimg.cn/large/6d72855fgy1fyml55iij8j20mr0ghgmm.jpg" alt=""></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/img/wechat.jpg" alt="Tianjun wechat" style="width: 200px; max-width: 100%;">
+    <div>欢迎订阅我的微信公众号</div>
+</div>
+
+      </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/输入法/" rel="tag"># 输入法</a>
+          
+            <a href="/tags/国际音标/" rel="tag"># 国际音标</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/Excel-VBA-四字节汉字处理/" rel="next" title="Excel VBA 四字节汉字处理">
+                <i class="fa fa-chevron-left"></i> Excel VBA 四字节汉字处理
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/Endnote正文citation添加页码法/" rel="prev" title="Endnote正文citation添加页码法">
+                Endnote正文citation添加页码法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/avatar/avatar.jpg" alt="Tianjun">
+            
+              <p class="site-author-name" itemprop="name">Tianjun</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/andygaotian" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#以下正题："><span class="nav-number">1.</span> <span class="nav-text">以下正题：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-目标："><span class="nav-number">1.1.</span> <span class="nav-text">1. 目标：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-实现方法："><span class="nav-number">1.2.</span> <span class="nav-text">2. 实现方法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-安装及使用方法："><span class="nav-number">1.3.</span> <span class="nav-text">3. 安装及使用方法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-扩展说明："><span class="nav-number">1.4.</span> <span class="nav-text">4. 扩展说明：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-编码说明："><span class="nav-number">1.5.</span> <span class="nav-text">5. 编码说明：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-圈发符号的数字1-4换左手上排qwer代替，5-8用右手yuio代替，如下："><span class="nav-number">1.5.1.</span> <span class="nav-text">1. 圈发符号的数字1-4换左手上排qwer代替，5-8用右手yuio代替，如下：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-上标时数字调号，用字母键盘最上排字母代替数字1-0，即："><span class="nav-number">1.5.2.</span> <span class="nav-text">2. 上标时数字调号，用字母键盘最上排字母代替数字1-0，即：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-θ原编码为数字0，改为oo-，此类的还有∅等。"><span class="nav-number">1.5.3.</span> <span class="nav-text">3. θ原编码为数字0，改为oo-，此类的还有∅等。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-其他相关修改："><span class="nav-number">1.6.</span> <span class="nav-text">6. 其他相关修改：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-扩展编辑方法说明："><span class="nav-number">1.7.</span> <span class="nav-text">7. 扩展编辑方法说明：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tianjun</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
